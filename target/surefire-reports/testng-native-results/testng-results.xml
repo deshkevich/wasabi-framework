@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="5818" started-at="2014-03-09T10:35:54Z" finished-at="2014-03-09T10:36:00Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="5818" started-at="2014-03-09T10:35:54Z" finished-at="2014-03-09T10:36:00Z">
+      <class name="com.autotesting.framework.TestClass">
+        <test-method status="PASS" signature="createAndStartService()[pri:0, instance:com.autotesting.framework.TestClass@304ed448]" name="createAndStartService" is-config="true" duration-ms="2507" started-at="2014-03-09T13:35:54Z" finished-at="2014-03-09T13:35:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndStartService -->
+        <test-method status="PASS" signature="simpleTest()[pri:0, instance:com.autotesting.framework.TestClass@304ed448]" name="simpleTest" duration-ms="1944" started-at="2014-03-09T13:35:57Z" finished-at="2014-03-09T13:35:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- simpleTest -->
+        <test-method status="PASS" signature="createAndStopService()[pri:0, instance:com.autotesting.framework.TestClass@304ed448]" name="createAndStopService" is-config="true" duration-ms="1353" started-at="2014-03-09T13:35:59Z" finished-at="2014-03-09T13:36:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAndStopService -->
+      </class> <!-- com.autotesting.framework.TestClass -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>
