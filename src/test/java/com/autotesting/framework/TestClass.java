@@ -27,7 +27,13 @@ public class TestClass {
 	}
 
 	@Test
-	public void simpleTest() throws InterruptedException {
+	public void simpleTest1() throws InterruptedException {
+		driver.get("http://185.26.52.130:7808/contingent/");
+		Assert.assertEquals(driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
+	}
+	
+	@Test
+	public void simpleTest2() throws InterruptedException {
 		driver.get("http://185.26.52.130:7808/contingent/");
 		Assert.assertEquals(driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
 	}
