@@ -13,7 +13,7 @@ public class LoginPageTest {
 	public void simpleTest() throws InterruptedException {
 		LoginPageScreen loginPageScreen = new LoginPageScreen().openLoginPageScreen();
 		Assert.assertEquals(loginPageScreen.getHeaderText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER, "Текст заголовка страницы логина"
-				+ " не соответствует ожидаемому.");
+				+ " не соответствует ожидаемому 'Вход в систему'");
 		loginPageScreen.closeBrowser();
 	}
 
