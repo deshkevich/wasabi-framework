@@ -1,59 +1,74 @@
 package screens;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import com.autotesting.framework.BaseScreen;
 
-import utils.WebDriverRunner;
-
-public class LoginPageScreen {
-	private static final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
-	private static final String LOGIN = "name";
-	private static final String PASSWORD = "password";
+public class LoginPageScreen extends BaseScreen {
+	private static final String LOGIN_PAGE_HEADER = "//span[@id='ui-dialog-title-dialog']";
+	private static final String LOGIN = "//input[@id='name']";
+	private static final String PASSWORD = "//input[@id='password']";
 	private static final String BUTTON_ENTER = "//button[@value='Войти']";
-	private static final String ERROR_FIND = "error";
-	private static final String TEXT_LOGIN_INCORRECT = "name";
-	private static final String TEXT_PASSWORD = "password";
-	
-	public WebDriver driver = WebDriverRunner.getDriver();
-	
-	//входим на страницу логина
+	private static final String ERROR_FIND = "//div[@class='error']";
+	private static final String TEXT_LOGIN_INCORRECT = reader.getIncorrectLogin();
+	private static final String TEXT_PASSWORD = reader.getCorrectPassword();
+	private static final String TEXT_LOGIN = reader.getCorrectLogin();
+	private static final String TEXT_PASSWORD_INCORRECT = reader.getIncorrectPassword();
+	private static final String LINK_ENTER_LOGIN = "//span[@class='ui-menuitem-text'][.='Выход']";
+
+	// входим на страницу логина
 	public LoginPageScreen openLoginPageScreen() {
-	driver.get("http://10.0.12.78/contingent/");
-	//driver.get("http://185.26.52.130:7808/contingent/");
-	return this;
+		// driver.get("http://10.0.12.78/contingent/");
+		driver.get(reader.getBaseUrl());
+		return this;
 	}
-	
-	//проверяем наличие заголовка на странице 
+
+	// проверяем наличие заголовка на странице
 	public String getHederText() {
-	String result = driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText();
-	return result;
+		String result = getTextFromElementByXpath(LOGIN_PAGE_HEADER);
+		return result;
 	}
-	
-	//ввод некорректного логина
+
+	// ввод некорректного логина
 	public LoginPageScreen enterInvolidLogin() {
-		driver.findElement(By.id(LOGIN)).sendKeys(TEXT_LOGIN_INCORRECT); //вводим некорректный логин
+		enterByXpath(LOGIN, TEXT_LOGIN_INCORRECT); // вводим некорректный логин
 		return this;
-		}
-	//ввод корректного пароля
-		public LoginPageScreen enterPassword() {
-			driver.findElement(By.id(PASSWORD)).sendKeys(TEXT_PASSWORD); //корректный пароль
-			return this;
-			}
-	//нажатие кнопки Войти
-			public LoginPageScreen klickEnter() {
-			driver.findElement(By.xpath(BUTTON_ENTER)).click();//нажимаем кнопку Войти
-			return this;
-			}
-	
-	//проверяем наличие ошибки на форме логина (должна быть, при неверном вводе параметров)
+	}
+
+	// ввод корректного логина
+	public LoginPageScreen enterLogin() {
+		enterByXpath(LOGIN, TEXT_LOGIN); // вводим некорректный логин
+		return this;
+	}
+
+	// ввод корректного пароля
+	public LoginPageScreen enterPassword() {
+		enterByXpath(PASSWORD, TEXT_PASSWORD);// корректный пароль
+		return this;
+	}
+
+	// ввод некорректного пароля
+	public LoginPageScreen enterIncorrectPassword() {
+		enterByXpath(PASSWORD, TEXT_PASSWORD_INCORRECT);// корректный пароль
+		return this;
+	}
+
+	// нажатие кнопки Войти
+	public LoginPageScreen klickEnter() {
+		clickByXpath(BUTTON_ENTER);// добавляем просто локатор, с учетом того,
+									// что уже ранее написали метод
+		return this;
+	}
+
+	// проверяем наличие ошибки на форме логина (должна быть, при неверном вводе
+	// параметров)
 	public String readErrorText() {
-	String result = driver.findElement(By.className(ERROR_FIND)).getText();
-	return result;
+		String result = getTextFromElementByXpath(ERROR_FIND);
+		return result;
 	}
-	
-	//закрываем браузер
-	public LoginPageScreen closeBrowser() {
-		WebDriverRunner.stopWebDriver();
+
+	// проверка успешного логина
+	public LoginPageScreen findLoginElement() {
+		findByXpath(LINK_ENTER_LOGIN);
 		return this;
 	}
+
 }
