@@ -1,41 +1,34 @@
 package com.autotesting.framework;
 
-import java.io.File;
-import java.io.IOException;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import Screens.LoginPageScreens;
 
-public class TestClass {
-	private static ChromeDriverService service;
-	private static WebDriver driver;
-	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver";
-	private static final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
+public class TestClass {s
+	
 	private static final String EXPECTED_TEXT_LOGIN_PAGE_HEADER = "Вход в систему";
+	
+	private static final String LOGIN_ID = ".//*[@id='form']/table/tbody/tr[1]/td/label";
+	private static final String LABLE = "Логин";
+	
+	private static final String PAROL_ID = ".//*[@id='form']/table/tbody/tr[2]/td/label";
+	private static final String POLE = "Пароль";
+	
+	
+	
 
-	@BeforeClass
-	public static void createAndStartService() throws IOException {
-		service = new ChromeDriverService.Builder().usingChromeDriverExecutable(new File(PATH_TO_CHROMEDRIVER)).usingAnyFreePort().build();
-		service.start();
-		driver = new ChromeDriver(service);
-	}
-
-	@Test
+	@Test (description = "Проверяем наличие основных элементов на странице логина.")
 	public void simpleTest() throws InterruptedException {
-		driver.get("http://185.26.52.130:7808/contingent/");
-		Assert.assertEquals(driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
+		LoginPTestClassPageScreen = new LoginPTestClassnLoginPageScreen();
+		
+		Assert.assertEquals(driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER, "Текст заголовка страницы логина" + " не соответствует ожидаемому.");
+		
+		loginPageScreen.closeBrowser();
+		Assert.assertEquals(driver.findElement(By.id(LOGIN_ID)).getText(), LABLE);
+		Assert.assertEquals(driver.findElement(By.id(PAROL_ID)).getText(), POLE);
 	}
 
-	@AfterClass
-	public static void createAndStopService() {
-		driver.quit();
-		service.stop();
-	}
-//for commit
+	
+
 }
