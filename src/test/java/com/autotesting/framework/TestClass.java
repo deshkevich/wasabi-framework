@@ -4,34 +4,26 @@ import java.io.File;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import screens.LoginPageScreen;
+import utils.WebDriverRunner;
+
 
 public class TestClass {
-	private static ChromeDriverService service;
-	private static WebDriver driver;
-	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver.exe";
 	private static final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
 	private static final String EXPECTED_TEXT_LOGIN_PAGE_HEADER = "Вход в систему";
 	private static final String EXPECTED_TEXT_SUCCESS_LOGIN = "admin [all]";
 	private static final String EXPECTED_LOGIN_ERROR = "Указан неверный логин или пароль. Попробуйте ещё раз.";
-	private static final String URL = "http://185.26.52.130:7808/contingent/";
-	
+	private static final String URL = "http://10.0.12.78:7808/contingent/"; //адресс должен заноситься в проперти внешние файл
+	public WebDriver driver = WebDriverRunner.getDriver();
 
-	@BeforeClass
-	public static void createAndStartService() throws IOException {
-		service = new ChromeDriverService.Builder().usingChromeDriverExecutable(new File(PATH_TO_CHROMEDRIVER)).usingAnyFreePort().build();
-		service.start();
-		driver = new ChromeDriver(service);
-	}
+
 	
 	//не могу понять почему не работает данная аннотация. почему-то после первого теста нет сравнения
 /*	@AfterTest 
@@ -46,8 +38,10 @@ public class TestClass {
 	
 	@Test
 	public void simpleTest() throws InterruptedException {
-		driver.get(URL);
-		Assert.assertEquals(driver.findElement(By.id(LOGIN_PAGE_HEADER_ID)).getText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
+		LoginPageScreen loginPage = new LoginPageScreen();
+		loginPage.openLoginPageScreen();
+		//loginPage.openLoginPageScreen().getHeaderText();
+		Assert.assertEquals(loginPage.getHeaderText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
 	}
 	
 	//из-за не работающей аннотации приходится использовать кривые зависимости. и первыми гнать тесты на неверные логины
