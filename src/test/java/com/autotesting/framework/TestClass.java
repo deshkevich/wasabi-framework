@@ -1,29 +1,44 @@
 package com.autotesting.framework;
 
-import java.io.File;
-import java.io.IOException;
+//import java.io.File;
+//import java.io.IOException;
 
-import org.openqa.selenium.By;
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.AfterTest;
+//import org.testng.annotations.AfterClass;
+//import org.testng.annotations.BeforeClass;
+//import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import screens.LoginPageScreen;
+import screens.StartPage;
 import utils.WebDriverRunner;
 
 
 public class TestClass {
-	private static final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
 	private static final String EXPECTED_TEXT_LOGIN_PAGE_HEADER = "Вход в систему";
 	private static final String EXPECTED_TEXT_SUCCESS_LOGIN = "admin [all]";
-	private static final String EXPECTED_LOGIN_ERROR = "Указан неверный логин или пароль. Попробуйте ещё раз.";
-	private static final String URL = "http://10.0.12.78:7808/contingent/"; //адресс должен заноситься в проперти внешние файл
-	public WebDriver driver = WebDriverRunner.getDriver();
+	//private static final String EXPECTED_LOGIN_ERROR = "Указан неверный логин или пароль. Попробуйте ещё раз.";
+	//private static final String URL = "http://10.0.12.78:7808/contingent/"; //адресс должен заноситься в проперти внешние файл
+	WebDriver driver = WebDriverRunner.getDriver();
+	LoginPageScreen loginPage = new LoginPageScreen();
+	StartPage startPage = new StartPage();
 
-
+	@Test
+	public void simpleTest() throws InterruptedException {
+		loginPage.openLoginPageScreen();
+		//loginPage.openLoginPageScreen().getHeaderText();
+		Assert.assertEquals(loginPage.getHeaderText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
+	}
+	
+	@Test (dependsOnMethods = {"simpleTest"})
+	public void testLoginAsAdmin() {
+		loginPage.setLogin("all");
+		loginPage.setPassword("all");
+		loginPage.pressButtonLogin();
+		Assert.assertEquals(startPage.getUserLocatorText(), EXPECTED_TEXT_SUCCESS_LOGIN, "НЕ ВОШЛИ");
+	}
 	
 	//не могу понять почему не работает данная аннотация. почему-то после первого теста нет сравнения
 /*	@AfterTest 
@@ -36,17 +51,11 @@ public class TestClass {
 	} 
 	*/
 	
-	@Test
-	public void simpleTest() throws InterruptedException {
-		LoginPageScreen loginPage = new LoginPageScreen();
-		loginPage.openLoginPageScreen();
-		//loginPage.openLoginPageScreen().getHeaderText();
-		Assert.assertEquals(loginPage.getHeaderText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER);
-	}
-	
 	//из-за не работающей аннотации приходится использовать кривые зависимости. и первыми гнать тесты на неверные логины
 	//тест на верный логин и что смогли залогиниться
-	@Test (dependsOnMethods = {"testIncorrectLogin", "testIncorrectPassword"})
+
+	
+/*	@Test (dependsOnMethods = {"testIncorrectLogin", "testIncorrectPassword"})
 	public void testLogin() {
 		driver.get(URL);
 		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("all"); //поле логина
@@ -98,9 +107,9 @@ public class TestClass {
 			Assert.assertEquals(driver.findElement(By.xpath("//div[@class='error']")).getText(), EXPECTED_LOGIN_ERROR, "LOG IN WITHOUT PASSWORD - WE CAN LOG IN!!!");
 		}
 
-	@AfterClass
+	/*@AfterClass
 	public static void createAndStopService() {
 		driver.quit();
 		service.stop();
-	}
-}
+	}*/
+}  
