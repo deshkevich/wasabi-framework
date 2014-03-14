@@ -9,7 +9,7 @@ public class BaseScreen {
 
 	protected static final Logger log = Logger.getLogger(WebDriverRunner.class);
 	WebDriver driver = WebDriverRunner.getDriver();
-
+	
 	public BaseScreen closeBrowser() {
 		log.debug("Закрываем браузер.");
 		WebDriverRunner.stopWebDriver();

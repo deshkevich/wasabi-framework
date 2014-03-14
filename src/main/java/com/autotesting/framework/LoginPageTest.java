@@ -2,6 +2,7 @@ package com.autotesting.framework;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import com.autotesting.screens.LoginPageScreen;
 
 public class LoginPageTest {
@@ -65,6 +66,19 @@ public class LoginPageTest {
 		Assert.assertEquals(loginPageScreen.loginButton.isEnabled(), true,
 				"Button is disabled");
 
+		loginPageScreen.closeBrowser();
+	}
+	
+	@Test(description = "Корректный логин")
+	public void correctLogin() throws InterruptedException {
+		
+		LoginPageScreen loginPageScreen = new LoginPageScreen()
+		.openLoginPageScreen();
+		
+		loginPageScreen.correctLogin();
+		
+	//	Assert.assertEquals(, expected);проверка на присутствие лого
+		
 		loginPageScreen.closeBrowser();
 	}
 

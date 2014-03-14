@@ -9,16 +9,20 @@ public class LoginPageScreen extends BaseScreen {
 
 	private final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
 	private final String LOGIN_PAGE_URL = "http://10.0.12.78/contingent/";
-	//private final String LOGIN_PAGE_URL = "http://185.26.52.130:7808/contingent/"
+	// private final String LOGIN_PAGE_URL =
+	// "http://185.26.52.130:7808/contingent/"
 	private static final String LOGIN_INPUT_ID = "name";
 	private static final String PASSWORD_INPUT_ID = "password";
 	private static final String BUTTON_VALUE = "//button[@value='Войти']";
 	private static final String LOGIN_LABEL = "//label[@class='ui-outputlabel' and contains(., 'Логин')]";
 	private static final String PASSWORD_LABEL = "//label[@class='ui-outputlabel' and contains(., 'Пароль')]";
 
+		
 	@FindBy(how = How.ID, using = LOGIN_INPUT_ID)
-	public WebElement loginField;
+	public WebElement loginField=null;
 
+	
+	
 	@FindBy(how = How.ID, using = PASSWORD_INPUT_ID)
 	public WebElement passwordField;
 
@@ -44,12 +48,20 @@ public class LoginPageScreen extends BaseScreen {
 	}
 
 	public String getLoginText() {
+		log.info(String.format(
+				"Получаем значение текста из поля Логина логина по id = '%s'",
+				LOGIN_LABEL));
 		String result = driver.findElement(By.xpath(LOGIN_LABEL)).getText();
+		log.info(String.format("Результат => '%s'", result));
 		return result;
 	}
 
 	public String getPasswordText() {
+		log.info(String.format(
+				"Получаем значение текста из поля Пароля логина по id = '%s'",
+				PASSWORD_LABEL));
 		String result = driver.findElement(By.xpath(PASSWORD_LABEL)).getText();
+		log.info(String.format("Результат => '%s'", result));
 		return result;
 	}
 

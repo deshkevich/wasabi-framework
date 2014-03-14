@@ -13,7 +13,7 @@ public class WebDriverRunner {
 	private static WebDriver driver;
 	private static ChromeDriverService service;
 
-	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver";
+	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver.exe";
 
 	WebDriverRunner() {
 		try {
