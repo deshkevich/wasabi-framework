@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 public class LoginPageScreen extends BaseScreen {
 
 	private final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
-	private final String LOGIN_PAGE_URL = "http://185.26.52.130:7808/contingent/";
+	private final String LOGIN_PAGE_URL = "http://10.0.12.78/contingent/";
 	
 	public LoginPageScreen openLoginPageScreen() {
 		log.info(String.format("Открываем в браузере страницу логина по адресу %s", LOGIN_PAGE_URL));
