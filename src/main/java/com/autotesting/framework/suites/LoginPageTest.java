@@ -1,9 +1,10 @@
-package com.autotesting.framework;
+package com.autotesting.framework.suites;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.autotesting.screens.LoginPageScreen;
+import com.autotesting.framework.screens.HomePage;
+import com.autotesting.framework.screens.LoginPageScreen;
 
 public class LoginPageTest {
 
@@ -23,11 +24,11 @@ public class LoginPageTest {
 				"Element Login not found");
 		Assert.assertNotEquals(loginPageScreen.getPasswordText(), null,
 				"Element password not found");
-		Assert.assertNotEquals(loginPageScreen.loginField, null,
+		Assert.assertNotEquals(loginPageScreen.loginFieldIsDisplayed(), true,
 				"Login field not found");
-		Assert.assertNotEquals(loginPageScreen.passwordField, null,
-				"Password field not found");
-		Assert.assertNotEquals(loginPageScreen.loginButton, null,
+		Assert.assertNotEquals(loginPageScreen.passwordFieldIsDisplayed(),
+				true, "Password field not found");
+		Assert.assertNotEquals(loginPageScreen.enterButtonIsDisplayed(), true,
 				"Login Button not found");
 
 		loginPageScreen.closeBrowser();
@@ -59,26 +60,32 @@ public class LoginPageTest {
 		LoginPageScreen loginPageScreen = new LoginPageScreen()
 				.openLoginPageScreen();
 
-		Assert.assertEquals(loginPageScreen.loginField.isEnabled(), true,
+		Assert.assertEquals(loginPageScreen.loginFieldIsEnabled(), true,
 				"Field Login is disabled");
-		Assert.assertEquals(loginPageScreen.passwordField.isEnabled(), true,
+		Assert.assertEquals(loginPageScreen.passwordFieldIsEnabled(), true,
 				"Field Password is disabled");
-		Assert.assertEquals(loginPageScreen.loginButton.isEnabled(), true,
+		Assert.assertEquals(loginPageScreen.enterButtonIsEnabled(), true,
 				"Button is disabled");
 
 		loginPageScreen.closeBrowser();
 	}
-	
+
 	@Test(description = "Корректный логин")
 	public void correctLogin() throws InterruptedException {
-		
+
 		LoginPageScreen loginPageScreen = new LoginPageScreen()
-		.openLoginPageScreen();
-		
-		loginPageScreen.correctLogin();
-		
-	//	Assert.assertEquals(, expected);проверка на присутствие лого
-		
+				.openLoginPageScreen();
+
+		HomePage homePage = loginPageScreen.correctLogin();
+
+		/**
+		 * поскольку запретили заходить на профтех, то делаю проверку успешного
+		 * логина по отобразившемуся лого, т.к. это единственный xpath, который
+		 * у меня есть на текущий момент с HomePage
+		 */
+		Assert.assertEquals(homePage.logoIsDisplayed(), true,
+				"Логотипа нет, логин неуспешен");
+
 		loginPageScreen.closeBrowser();
 	}
 

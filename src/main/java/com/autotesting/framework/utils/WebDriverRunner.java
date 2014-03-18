@@ -1,4 +1,4 @@
-package com.autotesting.utils;
+package com.autotesting.framework.utils;
 
 import java.io.File;
 
@@ -9,8 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class WebDriverRunner {
 
-	private static final Logger log = Logger.getLogger(WebDriverRunner.class);
-	private static WebDriver driver;
+	protected static final Logger log = Logger.getLogger(WebDriverRunner.class);
+	protected static WebDriver driver;
 	private static ChromeDriverService service;
 
 	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver.exe";
