@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.rstyle.utils.WebDriverRunner;
+import com.rstyle.driver.WebDriverRunner;
 
 public class BasicTest extends Assert {
 

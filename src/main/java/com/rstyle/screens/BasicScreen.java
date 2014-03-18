@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import org.testng.log4testng.Logger;
 
-import com.rstyle.utils.WebDriverRunner;
+import com.rstyle.driver.WebDriverRunner;
 
 public abstract class BasicScreen {
 	
