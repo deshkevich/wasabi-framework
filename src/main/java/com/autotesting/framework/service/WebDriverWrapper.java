@@ -22,38 +22,34 @@ public class WebDriverWrapper {
 	
 	private WebDriver driver = WebDriverRunner.getDriver();
 	private static final Logger log = Logger.getLogger(WebDriverRunner.class);
+	private static final int TIMEOUT_TO_WAIT_ELEMENT = 3; 
+			
+    public WebDriver getDriver() {
+    	
+    	return driver;
+    }
 	
-    
-    public void getPage(String url) {
+	
+	public void getPage(String url) {
     	
     	driver.get(url);
     }
 	
-    
-    public String getTitle() {
-    	
-    	String result = driver.getTitle();
-    	
-    	return result;
-    }
-    
-    
+       
     public String getTextByXpath(String xpath) {
     	
     	String result = driver.findElement(By.xpath(xpath)).getText();
     	return result;
-    }
+    }                 
 // Логирование на уровне дебага и ожидание для элементов реализовал на примере данного метода	
 	public void clickByXpath(String xpath) {
-	    log.debug("");		
-		//waitForElementPresentAndVisible(xpath,1);
-		//driver.findElement(By.xpath(xpath)).click();
-		//System.out.println("privet i'm wraping methot");
-	    waitForElementPresentAndVisible(xpath, 200);
-//	    System.out.println(str);
+	    log.debug("Логирование на уровне дебага: ожидание элемента для нажатия");		
+		
+	    waitForElementPresentAndVisible(xpath, TIMEOUT_TO_WAIT_ELEMENT);
+        
 	    driver.findElement(By.xpath(xpath)).click();
 		
-	}
+	}   
     
     
 	public void typeByXpath(String xpath, String text) {

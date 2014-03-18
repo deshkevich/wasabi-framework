@@ -3,12 +3,14 @@ package com.autotesting.framework.screens;
 import com.autotesting.framework.utils.WebDriverRunner;
 
 public class HomePageScreen extends BaseScreen {
-
-	public String getTitle() {
-		// TODO Auto-generated method stub
-//		String result = driver.getTitle();
+    
+	private final String HOME_PAGE_TITLE = "//title";
+	
+	
+	public String getTitleHomePage() {
 		
-		return wrapper.getTitle();
+		
+		return wrapper.getTextByXpath(HOME_PAGE_TITLE);
 	 }
 
 	

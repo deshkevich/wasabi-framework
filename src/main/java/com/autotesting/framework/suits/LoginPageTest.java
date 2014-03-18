@@ -19,7 +19,7 @@ public class LoginPageTest {
 	private HomePageScreen homePageScreen;
 	
 	@Test(description = "Проверяем наличие основных элементов на странице логина.")
-	public void simpleTest()  {
+	public void OpenLoginPageAndVerifyElement()  {
 		
 	    
 		loginPageScreen = new LoginPageScreen().openLoginPageScreen();
@@ -38,7 +38,6 @@ public class LoginPageTest {
 	Assert.assertEquals(loginPageScreen.emptyFields(), TEXT_ERROR_LOG_LOGIN_PAGE, "Текст сообщения о логировании при входе без логина и пароля");
 	
 	
-	
 	}
 	
 		
@@ -49,9 +48,9 @@ public class LoginPageTest {
 		
 		homePageScreen = loginPageScreen.successLogIn();
 				
-		Assert.assertEquals(homePageScreen.getTitle(), TITLE_HOME_PAGE, "Заголовок страницы HomePage не соответствует ожидаемому");
+		Assert.assertEquals(homePageScreen.getTitleHomePage(), TITLE_HOME_PAGE, "Заголовок страницы HomePage не соответствует ожидаемому");
 					
-		//homePageScreen.closeBrowser();
+		
 					
 		}
 	
@@ -60,11 +59,11 @@ public class LoginPageTest {
 	@AfterTest(description = "Закрытие браузера ")
 	public void exitBrowser() {
 		
-		//homePageScreen.closeBrowser();
+		
 		homePageScreen.closeBrowser();
 	}
-	
-		
+	 
+	 	
 	}
 	
 	
