@@ -6,6 +6,7 @@
       <class name="suits.LoginPageTest">
         <methods>
           <include name="simpleTest"/>
+          <include name="LoginIncorrect"/>
         </methods>
       </class> <!-- suits.LoginPageTest -->
     </classes>
