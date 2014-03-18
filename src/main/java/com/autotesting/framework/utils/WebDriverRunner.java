@@ -8,25 +8,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class WebDriverRunner {
-	
-	private static final Logger log = Logger.getLogger(WebDriverRunner.class);
-	private static WebDriverWrapper driver;
+	protected static final Logger log = Logger.getLogger(WebDriverRunner.class);
+	protected static WebDriver driver;
 	private static ChromeDriverService service;
-	
 	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver.exe";
-	
-	WebDriverRunner() {
+
+	private WebDriverRunner() {
+
 		try {
 			service = new ChromeDriverService.Builder().usingChromeDriverExecutable(new File(PATH_TO_CHROMEDRIVER)).usingAnyFreePort().build();
 			service.start();
-			driver = new WebDriverWrapper(service);
+			driver = new ChromeDriver(service);
 		} catch (Exception e) {
-			log.error("Error while creating Web Driver", e);
+			log.error("Ошибка создания сущности драйвера", e);
 		}
 	}
-	
-	public static WebDriverWrapper getDriver() {
-		if(driver == null) {
+
+	public static WebDriver getDriver() {
+		if (driver==null) {
 			new WebDriverRunner();
 		}
 		return driver;
@@ -35,7 +34,6 @@ public class WebDriverRunner {
 	public static void stopWebDriver() {
 		driver.quit();
 		service.stop();
-	}
-	
+}
 
 }

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="classes">
-  <test name="Test">
+  <test name="simpleTest">
     <packages>
-      <package name="com.autotesting.framework.suits"/>
+      <package name="com.autotesting.framework.suites"/>
     </packages>
   </test>
 </suite>
+
