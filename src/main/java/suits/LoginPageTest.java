@@ -1,20 +1,58 @@
 package suits;
-
-import org.testng.Assert;
+ 
 import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.Assert;
+//import org.testng.annotations.Test;
+//import org.apache.log4j.Logger;
+//import org.openqa.selenium.By;
+//import org.openqa.selenium.WebDriver;
 
+//import utils.WebDriverRunner;
+import screen.BaseScreen;
+import screen.HomePage;
 import screen.LoginPageScreen;
-
+ 
+ @Test
 public class LoginPageTest {
+ 
+	 public void checkFieldsAndLoginButtonEquels() throws InterruptedException {
+		 AssertJUnit.assertEquals(LoginPageScreen.loginFieldIsEnabled(), 
+				 "Field Login is disabled");
+				AssertJUnit.assertEquals(LoginPageScreen.passwordFieldIsEnabled(),
+						true,
+				"Field Password is disabled");
+				AssertJUnit.assertEquals(LoginPageScreen.enterButtonIsEnabled(), 
+				 true,
+				"Button is disabled");
 
-	private static final String EXPECTED_TEXT_LOGIN_PAGE_HEADER = "Вход в систему";
+BaseScreen.closeBrowser();
+	 }
+	 
+	 public void checkFieldsAndLoginButtonEnable() throws InterruptedException {
+	AssertJUnit.assertEquals(LoginPageScreen.loginFieldIsEnabled(), 
+	true,
+	"Field Login is disabled");
+	AssertJUnit.assertEquals(LoginPageScreen.passwordFieldIsEnabled(
+	), true,
+	"Field Password is disabled");
+	AssertJUnit.assertEquals(LoginPageScreen.enterButtonIsEnabled(), 
+	true,
+		"Button is disabled");
 
-	@Test(description = "Выполняется проверка наличия основных элементов на странице логина.")
-	public void simpleTest() throws InterruptedException {
-		LoginPageScreen loginPageScreen = new LoginPageScreen().openLoginPageScreen();
-		Assert.assertEquals(loginPageScreen.getHeaderText(), EXPECTED_TEXT_LOGIN_PAGE_HEADER, "Текст заголовка страницы логина"
-				+ " не соответствует ожидаемому 'Вход в систему'");
-		loginPageScreen.closeBrowser();
-	}
+		BaseScreen.closeBrowser();
+}
+	
 
+@Test(description = "Корректный логин")
+public void correctLogin() throws InterruptedException {
+	LoginPageScreen loginPageScreen = new LoginPageScreen()
+	 .openLoginPageScreen();
+
+		HomePage homePage = loginPageScreen.correctLogin();
+		Assert.assertEquals(homePage.logoIsDisplayed(), true,
+				"Логотипа нет, логин неуспешен");
+
+BaseScreen.closeBrowser();
+}
 }
