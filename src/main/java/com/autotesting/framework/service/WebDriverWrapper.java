@@ -1,5 +1,5 @@
 package com.autotesting.framework.service;
-
+    
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,10 +11,15 @@ import org.apache.commons.logging.Log;
 import org.apache.log4j.Logger;
     
 
+
+
 import java.util.concurrent.TimeUnit;
     
 
 
+
+
+import com.autotesting.framework.data.PropertiesReader;
 import com.autotesting.framework.utils.WebDriverRunner;
     
 	
@@ -23,12 +28,20 @@ public class WebDriverWrapper {
 	private WebDriver driver = WebDriverRunner.getDriver();
 	private static final Logger log = Logger.getLogger(WebDriverRunner.class);
 	private static final int TIMEOUT_TO_WAIT_ELEMENT = 3; 
-			
-    public WebDriver getDriver() {
+//	private PropertiesReader prop = PropertiesReader.getInstance();
+	
+  
+	
+	
+	
+	public WebDriver getDriver() {
     	
     	return driver;
     }
 	
+	
+   
+    
 	
 	public void getPage(String url) {
     	

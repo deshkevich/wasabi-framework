@@ -1,22 +1,24 @@
 package com.autotesting.framework.screens;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import com.autotesting.framework.data.PropertiesReader;
 import com.autotesting.framework.service.WebDriverWrapper;
 import com.autotesting.framework.utils.WebDriverRunner;
 
 public class LoginPageScreen extends BaseScreen {
     
 	private final String LOGIN_PAGE_HEADER_ID = "//*[@id='ui-dialog-title-dialog']";
-	private final String LOGIN_PAGE_URL = "http://10.0.12.78/contingent/";
+	private final String LOGIN_PAGE_URL = PropertiesReader.getHost();
+	private static int num = 0;
 	private final String XPATH_TEXT_ERROR_LOG_LOGIN_PAGE = "//*[@id='form']/div[1]";
 	private final String XPATH_LOGIN = "//*[@id='name']";
-	private final String TEXT_LOGIN = "all"; 
+	private final String TEXT_LOGIN = PropertiesReader.getLogin();
 	private final String XPATH_PASSWORD = "//*[@id='password']";
-	private final String TEXT_PASSWORD = "all";
+//	private final String TEXT_PASSWORD = "all";
+	private final String TEXT_PASSWORD = PropertiesReader.getPassword();
 	private final String XPATH_BUTTON = "//*[@id='form']//button";
 
 	
@@ -30,7 +32,10 @@ public class LoginPageScreen extends BaseScreen {
 	public LoginPageScreen openLoginPageScreen() {
 		log.info(String.format("Открываем в браузере страницу логина по адресу %s", LOGIN_PAGE_URL));
 		
+		
+		
 		wrapper.getPage(LOGIN_PAGE_URL);
+		
 		
 		return this;		
 	}
@@ -60,8 +65,8 @@ public class LoginPageScreen extends BaseScreen {
     
 	
 	public String emptyFields() { 
-		
-		
+		   
+		    
 		wrapper.clickByXpath(XPATH_BUTTON);
 			
 				
