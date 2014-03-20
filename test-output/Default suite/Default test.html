@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>4/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Mar 14 15:53:45 FET 2014</td>
+<td>Started on:</td><td>Thu Mar 20 12:53:06 FET 2014</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10184 ms)</td>
+<tr><td>Total time:</td><td>7 seconds (7853 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,14 +75,12 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@16c3ef9, false</td>
-<td><div><pre>java.lang.AssertionError: expected [Вход в систему] but found [Автоматизированная информационная система]
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@5e50d4, false</td>
+<td><div><pre>java.lang.AssertionError: Must not be login with data [ oper1]/[oper1]. But logined. expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.autotesting.framework.TestLogin.loginTest(TestLogin.java:31)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.rstyle.test.TestLogin.loginTest(TestLogin.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -107,14 +105,12 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace26134439", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace26134439'><pre>java.lang.AssertionError: expected [Вход в систему] but found [Автоматизированная информационная система]
+</pre></div><a href='#' onClick='toggleBox("stack-trace20995907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace20995907'><pre>java.lang.AssertionError: Must not be login with data [ oper1]/[oper1]. But logined. expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.autotesting.framework.TestLogin.loginTest(TestLogin.java:31)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.rstyle.test.TestLogin.loginTest(TestLogin.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -141,16 +137,14 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 </pre></div></td>
 <td>1</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@d5afff, false</td>
-<td><div><pre>java.lang.AssertionError: expected [Вход в систему] but found [Автоматизированная информационная система]
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@12e3194, false</td>
+<td><div><pre>java.lang.AssertionError: Must not be login with data [oper1 ]/[oper1]. But logined. expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.autotesting.framework.TestLogin.loginTest(TestLogin.java:31)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.rstyle.test.TestLogin.loginTest(TestLogin.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -175,14 +169,12 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-</pre></div><a href='#' onClick='toggleBox("stack-trace19137078", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace19137078'><pre>java.lang.AssertionError: expected [Вход в систему] but found [Автоматизированная информационная система]
+</pre></div><a href='#' onClick='toggleBox("stack-trace18619536", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace18619536'><pre>java.lang.AssertionError: Must not be login with data [oper1 ]/[oper1]. But logined. expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:94)
 	at org.testng.Assert.failNotEquals(Assert.java:494)
-	at org.testng.Assert.assertEquals(Assert.java:123)
-	at org.testng.Assert.assertEquals(Assert.java:176)
-	at org.testng.Assert.assertEquals(Assert.java:186)
-	at com.autotesting.framework.TestLogin.loginTest(TestLogin.java:31)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at com.rstyle.test.TestLogin.loginTest(TestLogin.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -208,8 +200,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
 </pre></div></td>
-<td>2</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>1</td>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -219,25 +211,25 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@11e07f, false</td>
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@1984427, false</td>
 <td></td>
-<td>2</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>1</td>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@1941ff4, false</td>
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@c5d01d, false</td>
 <td></td>
 <td>0</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@9d9682, false</td>
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@d8573, false</td>
 <td></td>
 <td>0</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 <tr>
-<td title='com.autotesting.framework.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.autotesting.framework.TestLogin<br>Parameters: com.rstyle.struct.UserData@10d2cf0, true</td>
+<td title='com.rstyle.test.TestLogin.loginTest()'><b>loginTest</b><br>Test class: com.rstyle.test.TestLogin<br>Parameters: com.rstyle.struct.UserData@9740de, true</td>
 <td></td>
-<td>0</td>
-<td>com.autotesting.framework.TestLogin@107939f</td></tr>
+<td>1</td>
+<td>com.rstyle.test.TestLogin@a80e05</td></tr>
 </table><p>
 </body>
 </html>

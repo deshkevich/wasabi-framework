@@ -1,15 +1,11 @@
 package com.rstyle.driver;
 
-import org.openqa.selenium.chrome.ChromeDriver;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverWrapper extends RemoteWebDriver implements IWebDriverWrapper{
 
-	
-	public WebDriverWrapper(ChromeDriver chromeDriver){
 		
-	}
-	
 	public WebDriverWrapper(){
 		
 	}

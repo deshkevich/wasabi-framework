@@ -1,36 +1,25 @@
 package com.rstyle.screens;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 
 
 
-
-import org.testng.log4testng.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.rstyle.driver.WebDriverRunner;
 
 public abstract class BasicScreen {
 	
-	protected Logger logger = Logger.getLogger(this.getClass());
-//	protected Logger resultsLog = Logger.getLogger("testResult." + this.getClass());
+	private Logger logger = LoggerFactory.getLogger(BasicScreen.class);	
+	protected static  WebDriver driver =  WebDriverRunner.getDriver();
 	
-	protected static  WebDriver driver =  WebDriverRunner.getDriver();	
-	protected String loginPageHeaderXpath = "";
-	
-	
-	public String getHeaderText(){
-		String result = null;		
 		
-		logger.info("Getting header text with xpath = ["+loginPageHeaderXpath+"]" + " from class " + this.toString() );		
-		try {
-			result = driver.findElement(By.xpath(loginPageHeaderXpath)).getText();
-		} catch (Exception e) {		
-			logger.error("Cannot get header Text = ["+loginPageHeaderXpath+"]");
-		}
-		
-		
-		return result;
+	public String getURL(){		
+		String url = driver.getCurrentUrl();
+		logger.info("Get url of currentPage "+"["+url+"]");
+		return url;
 	}
 	
 }

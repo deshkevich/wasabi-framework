@@ -1,24 +1,21 @@
 package com.rstyle.screens;
 
 import org.openqa.selenium.By;
+
 import com.rstyle.struct.UserData;
-import com.rstyle.utils.ConfigProperties;
+import com.rstyle.utils.PropertiesReader;
 
 public class LoginPageScreen extends BasicScreen {
-	private static final String LOGIN_URL = ConfigProperties
-			.getProperty("application.url");
-	private static final String LOGIN_PAGE_HEADER = "Вход в систему";
+	private static final String LOGIN_URL = PropertiesReader.getApplicationURL();			
+	
 
-	// xpath source for LoginPage in "By" way;
+	private String loginTextFieldXpath = "//*[@id='name']";
+	private String passwordTextFieldXpath = "//*[@id='password']";
+	private String submitButtonXpath = "//*[@class='ui-button-text']";
 
-	private By loginTextFieldBy = By.xpath("//*[@id='name']");
-	private By passwordTextFieldBy = By.xpath("//*[@id='password']");
-	private By submitButtonBy = By.xpath("//*[@class='ui-button-text']");
-
-	public LoginPageScreen() {
-		loginPageHeaderXpath = "//*[@id='ui-dialog-title-dialog']";
-	}
-
+	
+	
+	
 	public LoginPageScreen openLoginPageScreen() {
 		driver.manage().deleteAllCookies();
 		driver.get(LOGIN_URL);
@@ -26,15 +23,15 @@ public class LoginPageScreen extends BasicScreen {
 
 	}
 
-	/**
-	 * @return Page Header text
-	 */
-
+	
+	
+	
+	
 	public BasicScreen login(UserData userData) {
-		driver.findElement(loginTextFieldBy).sendKeys(userData.getUserName());
-		driver.findElement(passwordTextFieldBy).sendKeys(
+		driver.findElement(By.xpath(loginTextFieldXpath)).sendKeys(userData.getUserName());
+		driver.findElement(By.xpath(passwordTextFieldXpath)).sendKeys(
 				userData.getUserPassword());
-		driver.findElement(submitButtonBy).submit();
+		driver.findElement(By.xpath(submitButtonXpath)).submit();
 
 		if (isOnLoginPage()) {
 			return new LoginPageScreen();
@@ -47,7 +44,7 @@ public class LoginPageScreen extends BasicScreen {
 	private boolean isOnLoginPage() {
 		boolean isNotLogined = false;
 		try {
-			isNotLogined = LOGIN_PAGE_HEADER.equals(getHeaderText());
+			isNotLogined = LOGIN_URL.equals(getURL());
 		} catch (Exception e) {
 
 		}

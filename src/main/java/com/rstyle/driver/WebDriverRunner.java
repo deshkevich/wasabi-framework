@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 
@@ -15,10 +17,11 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverRunner extends RemoteWebDriver{
 	public enum Browser {CHROME, FIREFOX}; 
-	private static WebDriverWrapper driver = null; 
+	private static Logger logger = LoggerFactory.getLogger(WebDriverRunner.class);
+	private static WebDriver driver = null; 
 	
 	private static ChromeDriverService service;
-	private static final String PATH_TO_CHROMEDRIVER = "resource//chromedriver.exe";
+	private static final String PATH_TO_CHROMEDRIVER = "src//main//resources//chromedriver.exe";
 
 	
 	public WebDriverRunner(){
@@ -27,7 +30,7 @@ public class WebDriverRunner extends RemoteWebDriver{
 		setSettings();
 		
 	}
-//	
+	
 	private static void initChromeDriver(){
 	
 		try {
@@ -35,10 +38,10 @@ public class WebDriverRunner extends RemoteWebDriver{
 					.usingChromeDriverExecutable(new File(PATH_TO_CHROMEDRIVER))
 					.usingAnyFreePort().build();
 			service.start();
-			driver = new WebDriverWrapper(new ChromeDriver(service));		
+			driver = new ChromeDriver(service);		
 			
 		} catch (Exception e) {
-//			log.error("Ошибка создания сущности драйвера", e);
+			logger.error("Ошибка создания сущности драйвера", e);
 		}
 	}
 	
@@ -59,7 +62,8 @@ public class WebDriverRunner extends RemoteWebDriver{
 	
 	
 	public static void createAndStopService() {
-		driver.quit();
+		
+		driver.quit();	
 		service.stop();
 	}
 	
