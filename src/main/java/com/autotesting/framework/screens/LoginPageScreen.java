@@ -1,17 +1,20 @@
 package com.autotesting.framework.screens;
 
+import com.autotesting.framework.utils.PropertiesReader;
+
 public class LoginPageScreen extends BaseScreen {
 
 	private final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
 	// private final String LOGIN_PAGE_URL = "http://10.0.12.78/contingent/";
-	private final String LOGIN_PAGE_URL = "http://185.26.52.130:7808/contingent/";
+	private final String LOGIN_PAGE_URL = PropertiesReader.getHost();
 	private static final String LOGIN_INPUT_ID = "//input[@id='name']";
 	private static final String PASSWORD_INPUT_ID = "//input[@id='password']";
 	private static final String BUTTON_VALUE = "//button[@value='Войти']";
 	private static final String LOGIN_LABEL = "//label[@class='ui-outputlabel' and contains(., 'Логин')]";
 	private static final String PASSWORD_LABEL = "//label[@class='ui-outputlabel' and contains(., 'Пароль')]";
-	private static final String CORRECT_LOGIN = "all";
-	private static final String CORRECT_PASSWORD = "all";
+	private static final String CORRECT_LOGIN = PropertiesReader.getLogin();
+	private static final String CORRECT_PASSWORD = PropertiesReader
+			.getPassword();
 
 	public LoginPageScreen openLoginPageScreen() {
 		log.info(String.format(
@@ -31,19 +34,19 @@ public class LoginPageScreen extends BaseScreen {
 	}
 
 	public String getLoginText() {
+		String result = driverWrapper.getElementText(LOGIN_LABEL);
 		log.info(String.format(
 				"Получаем значение текста из поля Логина логина по id = '%s'",
 				LOGIN_LABEL));
-		String result = driverWrapper.getElementText(LOGIN_LABEL);
 		log.info(String.format("Результат => '%s'", result));
 		return result;
 	}
 
 	public String getPasswordText() {
+		String result = driverWrapper.getElementText(PASSWORD_LABEL);
 		log.info(String.format(
 				"Получаем значение текста из поля Пароля логина по id = '%s'",
 				PASSWORD_LABEL));
-		String result = driverWrapper.getElementText(PASSWORD_LABEL);
 		log.info(String.format("Результат => '%s'", result));
 		return result;
 	}

@@ -1,0 +1,34 @@
+2014-03-20 16:04:29 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:33)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:04:29 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (getHeaderText:44)  : Получаем значение текста из хедера страницы логина по id = '//*[@id='ui-dialog-title-dialog']'
+2014-03-20 16:04:29 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (getHeaderText:47)  : Результат => 'Вход в систему'
+2014-03-20 16:09:20 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:33)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:09:22 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (getHeaderText:44)  : Получаем значение текста из хедера страницы логина по id = '//*[@id='ui-dialog-title-dialog']'
+2014-03-20 16:09:22 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (getHeaderText:47)  : Результат => 'Вход в систему'
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (loginFieldIsEnabled:55)  : Получаем информацию о доступности поля Логина
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (passwordFieldIsEnabled:61)  : Получаем информацию о доступности поля Пароля
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (enterButtonIsEnabled:67)  : Получаем информацию о доступности кнопки Войти
+2014-03-20 16:44:11 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:44:14 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:32 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:32 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (loginFieldIsEnabled:55)  : Получаем информацию о доступности поля Логина
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (passwordFieldIsEnabled:61)  : Получаем информацию о доступности поля Пароля
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (enterButtonIsEnabled:67)  : Получаем информацию о доступности кнопки Войти
+2014-03-20 16:45:33 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageScreen:20)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 16:45:35 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/

@@ -83,7 +83,7 @@ public class LoginPageTest {
 		 * логина по отобразившемуся лого, т.к. это единственный xpath, который
 		 * у меня есть на текущий момент с HomePage
 		 */
-		Assert.assertEquals(homePage.logoIsDisplayed(), true,
+		Assert.assertEquals(homePage.isLogoDisplayed(), true,
 				"Логотипа нет, логин неуспешен");
 
 		loginPageScreen.closeBrowser();

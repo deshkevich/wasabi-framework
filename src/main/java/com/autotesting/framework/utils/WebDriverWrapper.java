@@ -43,23 +43,23 @@ public class WebDriverWrapper {
 	}
 
 	public boolean elementIsEnabled(String xpath) {
+		WebElement e = getElement(xpath);
 		log.debug("[ACTION]: Check element is Enabled by xpath: '" + xpath
 				+ "'");
-		WebElement e = getElement(xpath);
 		return e.isEnabled();
 	}
 
 	public boolean elementIsDisplayed(String xpath) {
+		WebElement e = getElement(xpath);
 		log.debug("[ACTION]: Check element is Displayed by xpath: '" + xpath
 				+ "'");
-		WebElement e = getElement(xpath);
 		return e.isDisplayed();
 	}
 
 	public String getElementText(String xpath) {
-		log.debug("[ACTION]: Get element text by xpath: '" + xpath + "'");
 		WebElement e = getElement(xpath);
 		String result = e.getText();
+		log.debug("[ACTION]: Get element text by xpath: '" + xpath + "'");
 		return result;
 	}
 

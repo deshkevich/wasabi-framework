@@ -2,12 +2,12 @@ package com.autotesting.framework.screens;
 
 public class HomePage extends BaseScreen {
 
-	private static final String LOGO_CLASS = "//a[@class='mosgerb']";
+	private static final String LOGO_XPATH = "//a[@class='mosgerb']";
 
-	public boolean logoIsDisplayed() {
+	public boolean isLogoDisplayed() {
 		log.info(String.format("Получаем информацию о видимости лого",
-				LOGO_CLASS));
-		return driverWrapper.elementIsDisplayed(LOGO_CLASS);
+				LOGO_XPATH));
+		return driverWrapper.elementIsDisplayed(LOGO_XPATH);
 	}
 
 }
