@@ -10,9 +10,13 @@
   <name>framework</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <maven.compiler.source>1.7</maven.compiler.source>
+  <maven.compiler.target>1.7</maven.compiler.target>
+  <slf4jVersion>1.6.1</slf4jVersion>
+ </properties>
+
   <build>
     <plugins>
       <plugin>
@@ -30,6 +34,16 @@
     </plugins>
   </build>
 <dependencies>
+ <dependency>
+   <groupId>org.slf4j</groupId>
+   <artifactId>slf4j-api</artifactId>
+   <version>${slf4jVersion}</version>
+  </dependency>
+  <dependency>
+   <groupId>ch.qos.logback</groupId>
+   <artifactId>logback-classic</artifactId>
+   <version>1.0.13</version>
+  </dependency>
 <dependency>
 <groupId>org.seleniumhq.selenium</groupId>
 <artifactId>selenium-chrome-driver</artifactId>
@@ -52,6 +66,7 @@
 </dependency>
   </dependencies>
 </project>
+
 
 
 

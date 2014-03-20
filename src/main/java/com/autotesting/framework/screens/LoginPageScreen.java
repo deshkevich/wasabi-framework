@@ -2,14 +2,17 @@ package com.autotesting.framework.screens;
 
 
 import org.openqa.selenium.By;
-import org.apache.log4j.Logger;
-
-
+//import org.apache.log4j.Logger;
+import com.autotesting.framework.utils.PropertiesReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.autotesting.framework.utils.WebDriverBaseActions;
 
 public class LoginPageScreen extends BaseScreen {
 	private WebDriverBaseActions action = new WebDriverBaseActions();
-	protected static final Logger log = Logger.getLogger(LoginPageScreen.class);
+	//protected static final Logger log = Logger.getLogger(LoginPageScreen.class);
+	private static Logger logger = LoggerFactory.getLogger(LoginPageScreen.class);
+	private static final String LOGIN_URL = PropertiesReader.getProperty("application.url");
 	private static final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
 	private static final String LOGIN_FIELD = "//input[@id='name']";
 	private static final String PASSWORD_FIELD = "//input[@id='password']";
@@ -17,8 +20,11 @@ public class LoginPageScreen extends BaseScreen {
 	private static final String ERROR_MESSAGE = "//div[@class='error']";
 
 	public LoginPageScreen openLoginPageScreen() {
-		driver.get("http://10.0.12.78/contingent/");
+		driver.get(LOGIN_URL);
+		NullPointerException e = new NullPointerException();
+		logger.error("",e);
 		return this;
+		
 	}
 	
 	public LoginPageScreen setLogin(String login) {
