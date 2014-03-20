@@ -33,6 +33,6 @@ public class TestClass {
 		loginPageScreen.closeBrowser();
 	}
 
-	// дальше сделать не смогла - забрали стенд
+
 
 }

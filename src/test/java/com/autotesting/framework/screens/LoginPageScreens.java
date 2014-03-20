@@ -1,9 +1,11 @@
 package com.autotesting.framework.screens;
 
+import com.autotesting.framework.utils.PropertiesReader;
+
 public class LoginPageScreens extends BaseScreens {
 
 	private final String LOGIN_PAGE_HEADER_ID = "ui-dialog-title-dialog";
-	private final String LOGIN_PAGE_URL = "http://10.0.12.78/contingent/";
+	private final String LOGIN_PAGE_URL = PropertiesReader.getHost();
 	private static final String LOGIN_ID = ".//*[@id='form']/table/tbody/tr[1]/td/label";
 	private static final String PAROL_ID = ".//*[@id='form']/table/tbody/tr[2]/td/label";
 

@@ -1,0 +1,4 @@
+2014-03-20 18:07:52 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (openLoginPageSkreen:13)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 18:07:52 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (openScreen:67)  : Открываем в браузере страницу логина по адресу http://172.16.81.222:8080/contingent/
+2014-03-20 18:07:53 [main]  INFO com.autotesting.framework.utils.WebDriverRunner (getHeaderText:21)  : Получаем значение текста из хедера страницы логина по id = 'ui-dialog-title-dialog'
+2014-03-20 18:07:53 [main]  INFO com.autotesting.framework.utils.WebDriverWrapper (getElement:73)  : Получаем элемент
