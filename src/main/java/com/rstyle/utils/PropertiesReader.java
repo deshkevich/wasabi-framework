@@ -25,6 +25,10 @@ public class PropertiesReader {
 	}
 	
 	
+	public static String getSnapshootPath(){
+		return getProperty("screenshot.path");
+	}
+	
 	public static String getApplicationURL(){
 		return getProperty("application.url");
 	}
@@ -37,8 +41,8 @@ public class PropertiesReader {
 		return getProperty("application.admin.password");
 	}
 	
-	public static String getTimeoutWaitForElement(){
-		return getProperty("driver.options.timeoutWaitForAction");
+	public static int getTimeoutWaitForElement(){
+		return Integer.parseInt(getProperty("driver.options.timeoutWaitForAction"));
 	}
 	
 	private static String getProperty(String key){		

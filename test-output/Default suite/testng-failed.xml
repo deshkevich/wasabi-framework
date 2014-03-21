@@ -6,7 +6,7 @@
       <class name="com.rstyle.test.TestLogin">
         <methods>
           <include name="dosmth"/>
-          <include name="loginTest" invocation-numbers="3 4"/>
+          <include name="testNewFunctionsOfDriver"/>
           <include name="stop"/>
         </methods>
       </class> <!-- com.rstyle.test.TestLogin -->

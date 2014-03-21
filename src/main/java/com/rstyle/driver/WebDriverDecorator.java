@@ -19,8 +19,7 @@ public class WebDriverDecorator implements WebDriver {
 		innerDriver = remoteDriver;
 	}
 
-	public static final int TIMEOUT_FOR_ACTION_SECONDS = Integer
-			.parseInt(PropertiesReader.getTimeoutWaitForElement());
+	public static final int TIMEOUT_FOR_ACTION_SECONDS = PropertiesReader.getTimeoutWaitForElement();
 
 	
 	public void clickByXpath(String xpath) {

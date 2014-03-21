@@ -9,6 +9,7 @@ import com.rstyle.screens.HomePageScreen;
 import com.rstyle.screens.LoginPageScreen;
 import com.rstyle.struct.UserData;
 import com.rstyle.testdata.LoginData;
+import com.rstyle.utils.Photographer;
 
 public class TestLogin extends BasicTest {
 	private LoginPageScreen loginPage = new LoginPageScreen();
@@ -19,6 +20,7 @@ public class TestLogin extends BasicTest {
 	public void testNewFunctionsOfDriver(){
 		WebDriverDecorator driver  = WebDriverRunner.getDriver();
 		driver.get("http://google.com");
+		Photographer.doScreenshot("hello!");
 //		driver.clickByXpath();
 	}
 	

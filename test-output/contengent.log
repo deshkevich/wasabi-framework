@@ -1,1 +1,18 @@
 INFO  [2014-03-21 17:15:54.098 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:04:24.510 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [driver.options.timeoutWaitForAction] --> return value [3]
+INFO  [2014-03-21 18:04:26.940 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:04:33.162 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [test-output/snapshot] --> return value [null]
+INFO  [2014-03-21 18:05:22.554 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [driver.options.timeoutWaitForAction] --> return value [3]
+INFO  [2014-03-21 18:05:24.637 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:05:27.236 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [screenshot.path] --> return value [test-output/snapshot;]
+INFO  [2014-03-21 18:07:13.441 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [driver.options.timeoutWaitForAction] --> return value [3]
+INFO  [2014-03-21 18:07:15.551 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:07:18.197 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [screenshot.path] --> return value [test-output/snapshot]
+INFO  [2014-03-21 18:07:52.289 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [driver.options.timeoutWaitForAction] --> return value [3]
+INFO  [2014-03-21 18:07:54.234 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:07:57.307 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [screenshot.path] --> return value [test-output/snapshot]
+INFO  [2014-03-21 18:07:57.307 FET]  [main      ]  c.r.u.Photographer - Getting a snapshoot
+INFO  [2014-03-21 18:09:38.683 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [driver.options.timeoutWaitForAction] --> return value [3]
+INFO  [2014-03-21 18:09:40.339 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [application.url] --> return value [http://172.16.81.222:8080/contingent/login.xhtml]
+INFO  [2014-03-21 18:09:42.965 FET]  [main      ]  c.r.u.PropertiesReader - Getting a property with key [screenshot.path] --> return value [test-output/snapshot]
+INFO  [2014-03-21 18:09:42.966 FET]  [main      ]  c.r.u.Photographer - Getting a snapshoot
