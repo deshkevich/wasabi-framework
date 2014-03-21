@@ -37,6 +37,10 @@ public class PropertiesReader {
 		return getProperty("application.admin.password");
 	}
 	
+	public static String getTimeoutWaitForElement(){
+		return getProperty("driver.options.timeoutWaitForAction");
+	}
+	
 	private static String getProperty(String key){		
 		String propertyValue = PROPERTIES.getProperty(key); 
 		logger.info("Getting a property with key ["+key+"] --> return value ["+propertyValue+"]");

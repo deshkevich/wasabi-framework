@@ -3,7 +3,6 @@ package com.rstyle.driver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -18,7 +17,7 @@ import org.slf4j.LoggerFactory;
 public class WebDriverRunner extends RemoteWebDriver{
 	public enum Browser {CHROME, FIREFOX}; 
 	private static Logger logger = LoggerFactory.getLogger(WebDriverRunner.class);
-	private static WebDriver driver = null; 
+	private static WebDriverDecorator driver = null; 
 	
 	private static ChromeDriverService service;
 	private static final String PATH_TO_CHROMEDRIVER = "src//main//resources//chromedriver.exe";
@@ -35,10 +34,10 @@ public class WebDriverRunner extends RemoteWebDriver{
 	
 		try {
 			service = new ChromeDriverService.Builder()
-					.usingChromeDriverExecutable(new File(PATH_TO_CHROMEDRIVER))
+					.usingDriverExecutable(new File(PATH_TO_CHROMEDRIVER))
 					.usingAnyFreePort().build();
 			service.start();
-			driver = new ChromeDriver(service);		
+			driver = new WebDriverDecorator(new ChromeDriver(service));		
 			
 		} catch (Exception e) {
 			logger.error("Ошибка создания сущности драйвера", e);
@@ -52,7 +51,7 @@ public class WebDriverRunner extends RemoteWebDriver{
 	
 	
 	
-	public static WebDriver getDriver(){
+	public static WebDriverDecorator getDriver(){
 		if(driver == null){
 			initChromeDriver();
 		}

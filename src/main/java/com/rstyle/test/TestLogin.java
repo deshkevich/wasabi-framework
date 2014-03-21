@@ -2,6 +2,8 @@ package com.rstyle.test;
 
 import org.testng.annotations.Test;
 
+import com.rstyle.driver.WebDriverRunner;
+import com.rstyle.driver.WebDriverDecorator;
 import com.rstyle.screens.BasicScreen;
 import com.rstyle.screens.HomePageScreen;
 import com.rstyle.screens.LoginPageScreen;
@@ -12,7 +14,17 @@ public class TestLogin extends BasicTest {
 	private LoginPageScreen loginPage = new LoginPageScreen();
 	
 	
-	@Test(dataProvider = "loginTestData", dataProviderClass = LoginData.class, enabled = true)
+	
+	@Test
+	public void testNewFunctionsOfDriver(){
+		WebDriverDecorator driver  = WebDriverRunner.getDriver();
+		driver.get("http://google.com");
+//		driver.clickByXpath();
+	}
+	
+	
+	
+	@Test(dataProvider = "loginTestData", dataProviderClass = LoginData.class, enabled = false)
 	public void loginTest(UserData userData, boolean mustBeLogin) {
 
 		loginPage.openLoginPageScreen();
