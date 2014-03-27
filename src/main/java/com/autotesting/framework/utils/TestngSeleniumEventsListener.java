@@ -34,12 +34,7 @@ public class TestngSeleniumEventsListener implements ITestListener, IInvokedMeth
 	}
 
 	private void handleFailure(ITestResult result) {
-		if (WebDriverRunner.getDriver() !=null) {
-			String casName = getCaseName(result);
-			//будут методы в сосднем классе
-			Photographer.doScreenshot(caseName);
-			Photographer.saveSourceToFile(caseName);
-		}
+
 		
 	}
 

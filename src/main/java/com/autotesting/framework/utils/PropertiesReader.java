@@ -27,6 +27,10 @@ public class PropertiesReader {
 	public static String getApplicationURL() {
 		return getProperty("application.url");
 	}
+	
+	public static String getSnapshootPath(){
+		return getProperty("screenshot.path");
+	}
 
 	public static String getApplicationLogin() {
 		return getProperty("username");
